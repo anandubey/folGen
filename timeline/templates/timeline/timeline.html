@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'timeline/css/timeline.css' %}">
+
+    <title> folGen </title>
+    <script type="text/javascript">
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+    function togglePanel() {
+        var el=document.getElementById("dropdown-panel");
+        if (el.style.display === "none") {
+            el.style.display = "inline-block";
+        }
+        else{
+            el.style.display = "none";
+        }
+    }
+    function is_post_content_empty(){
+        var button = document.getElementById('post-btn');
+        var timeline = document.getElementById('timeline-new_post')
+        if (document.activeElement.id == "post-content"){
+            timeline.style.height = "140px";
+            button.style.display = "inline-block";
+
+        }
+        else{
+            timeline.style.height = "60px";
+            button.style.display = "none";
+        }
+    }
+    </script>
+</head>
+<body onclick="is_post_content_empty()">
+	<div class="navbar-container">
+		<ul>
+			<li class="nav-li-home"><a href="#"> Home </a></li>
+			<li class="nav-li-notification"><a href="#"> Notifications </a></li>
+        </ul>
+        <div class="logo">
+            <span><b>folGen</b></span>
+        </div>
+
+		<div onclick="togglePanel()" class="navbar-img-holder">
+            <img  class="avatar" src="{% static 'timeline/img/avatar.png' %}">
+            <div id="dropdown-panel" style="display: none;" >
+                    <a href="{% url 'profile' %}"> Profile </a>
+                    <a href="{% url 'settings' %}"> Settings </a>
+                    <a href="{% url 'logout' %}"> Logout </a>
+                </div>
+		</div>
+    </div>
+    
+    <div class="timeline-container">
+        <div class="user_details_container">
+            <div class="user_details">
+                <div class="banner_wall">
+                </div>
+                <img class="banner_user_img" src="{% static 'timeline/img/user.png' %}">
+                <div class="user_details_display">
+                    <p class="user_details_p_name">{{user_data.name}}</p>
+                    <p class="user_details_p_username">@ {{user_data.username}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-new_post" id="timeline-new_post">
+                <form method="POST">
+                    {% csrf_token %}
+                    <textarea  placeholder="What's Happening?" class="new-post-textArea" name="post_content" id="post-content" ></textarea>
+                    <input type="submit" id="post-btn" value="POST">
+                </form>
+            </div>
+            <div class="post-area">
+                {% for timestamp_tuple in posts %}
+                        <div class="post">
+                            <div>
+                                {{ pos}}
+                            </div>
+                            {% for post_tuple in timestamp_tuple.1 %}
+                                <img class="post_icon" src="{% static 'timeline/img/icon.png' %}"> <span id="name_span">{{ post_tuple.name }}</span>
+                                 <span id="username_span">@{{ post_tuple.username }} |</span> <span id="time_span">{{post_tuple.time }}</span>
+                                <br><div class="post_text_div"><span id="post_text_span">{{ post_tuple.text }}</span></div>
+                            {% endfor %}
+                        <br><br><br>
+                        </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+html, body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100vh;
+}
+
+
+body{
+	font-family: Poppins;
+	font-weight: 400;
+	background-position: center;
+}
+
+.navbar-container{
+	text-align: center;
+	background-color: #1f1a25;
+	height: 46px;
+	width: 100%;
+	min-width: 500px;
+	clear: both;
+	overflow: hidden;
+}
+
+.navbar-container ul{
+	position: absolute;
+	left: 5px;
+	color: white;
+	list-style: none;
+	
+}
+.navbar-container ul li{
+	display: inline-block;
+	padding-right: 20px;
+}
+
+a{
+	color: white;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.navbar-img-holder{
+	float: right;
+	display: inline-block;
+}
+.avatar{
+	float: left;
+	margin-top: 7px;
+	margin-right: 20px;
+	width: 32px;
+	height: 32px;
+}
+
+.avatar:hover{
+	opacity: 0.5;
+	transition: .3s;
+}
+
+
+/* Drop down panel */
+#dropdown-panel{
+	position: absolute;
+	right: 20px;
+	top: 46px;
+	background-color: #fff;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	padding: 8px;
+	width: 100px;
+	z-index: 1;
+	display: none;
+}
+#dropdown-panel a{
+	display: block;
+	text-decoration: none;   
+
+	padding: 8px;
+	
+	color: #000;
+}
+
+
+
+
+
+.logo{
+	display: inline;
+	width: 156px;
+	margin: 0 auto;
+}
+
+.logo > span{
+	color: aqua;
+	font-size: 38px;
+}
+
+
+.timeline-container{
+	padding-top: 20px;
+	display: inline-block;
+	background-color: #fff;
+	vertical-align: top;
+	width: 100%;
+	height: auto;
+}
+
+.timeline{
+	display: inline-block;
+	margin: 0 auto;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	text-align: center;
+	width: 650px;
+	height: auto;
+	
+}
+.user_details_container{
+	display: inline-block;
+	vertical-align: top;
+	width: 30%;
+	margin: 0 auto;
+	height: 200px;
+}
+.user_details{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	float: right;
+	height: 200px;
+	width: 300px;
+}
+.user_details_display{
+	font-size: 18px;
+	position: relative;
+	bottom: 70px;
+	left: 80px;
+}
+.user_details_p_name{
+	font-weight: bold;
+}
+.user_details_p_username{
+	margin-top: 2px;
+}
+
+
+
+
+/*  max no of characters allowed in a new post is 240 */
+.new-post-textArea {
+	margin-top: 10px;
+	width: 90%;
+	height: fit-content;
+	min-height: 36px;
+	padding: 8px 20px;
+	box-sizing: border-box;
+	border-radius: 4px;
+	font-size: 14px;
+	resize: none;
+  }
+
+.timeline-new_post{
+	height: 60px;
+}
+.new-post-textArea:focus{
+	height: 82px;
+}
+
+
+#post-btn{
+	display: none;
+	float: right;
+	right: 5%;
+	background: #fff;
+	color: green;
+	border: 2px solid green;
+	padding: 5px 10px;
+	margin-right: 42px;
+	margin-top: 10px;
+}
+#post-btn:hover{
+	color: white;
+	background-color: green;
+	cursor: pointer;
+}
+
+
+
+.timeline-new_post > form{
+	height:100px;
+}
+.post-area{
+	border-top: 1px solid grey;
+}
+
+
+
+
+
+.banner_wall{
+	text-align: center;
+	vertical-align: middle;
+	background-color: plum;
+	height: 90px;
+	font-size: 50px;
+	width: 100%;
+}
+.banner_user_img{
+	position: relative;
+	top: -35px;
+	left: 10px;
+	width: 60px;
+	height: 60px;
+}
+
+.post{
+	padding-top: 5px;
+	text-align: left;
+	font-size: 18px;
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.post_icon{
+	position: relative;
+	top: 5px;
+	left: 10px;
+	width: 40px;
+	height: 40px;
+}
+
+#name_span, #username_span, #time_span{
+	position: relative;
+	left: 20px;
+	top: 10px;
+	vertical-align: top;
+}
+
+
+#post_text_span{
+	display: inline-block;
+	width: 86%;
+	position: relative;
+	left: 65px;	
+}
+
+#name_span{
+	font-weight: bold;
+}
+#username_span{
+	color: rgb(124, 124, 124);
+}
+
+
+
+
+
+

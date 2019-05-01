@@ -1,0 +1,229 @@
+
+html, body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100vh;
+}
+
+
+body{
+	font-family: Poppins;
+	font-weight: 400;
+	background-position: center;
+}
+
+.wrapper{
+	height: 100%;
+}
+
+.navbar-container{
+	background-color: #1f1a25;
+	height: 70px;
+	width: 100%;
+	min-width: 500px;
+	clear: both;
+	overflow: hidden;
+}
+
+.navbar-container span{
+	font-size: 45px;
+	float: left;
+	margin-left: 50px;
+	margin-top: 10px;
+	color: white;
+}
+
+
+
+.login-input{
+	width: 150px;
+	height: 22px;
+	margin-right: 20px;
+	padding: 15px;
+	box-sizing: border-box;
+	border: 1px solid #fff;
+	border-radius: 2px;
+	vertical-align: top;
+}
+
+.login-form{
+	min-width: 445.04px;
+	position: absolute;
+	right: 50px;
+	top: 21px;
+}
+
+
+/* Designing button */
+
+.draw-border {
+  box-shadow: inset 0 0 0 2px #58afd1;
+  color: #58afd1;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+.draw-border::before, .draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+.draw-border::before {
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+.draw-border::after {
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+.draw-border:hover {
+  color: #ffe593;
+}
+.draw-border:hover::before, .draw-border:hover::after {
+  border-color: #ffe593;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+.draw-border:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+.draw-border:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem 'Roboto Slab', sans-serif;
+  padding: 0.25em 0.8em;
+  letter-spacing: 0.020rem;
+}
+.btn:focus {
+  outline: 1px dotted #55d7dc;
+}
+
+
+
+/* Signup Form styling */
+
+.signup-container {
+	text-align: center;
+	width: 30%;
+  height: 400px;
+  min-width: 300px;
+	
+	margin: 0 auto;
+	background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    top: 15%;
+    bottom: 20%;
+}
+.signup-container > h1{
+	position: relative;
+	top: 5%;
+	margin-bottom: 40px;	
+}
+
+.signup-input{
+	width: 250px;
+	height: 22px;
+	margin-bottom: 20px;
+	padding: 15px;
+	box-sizing: border-box;
+	border: 1px solid black;
+	border-radius: 2px;
+}
+
+.signup-draw-border {
+  box-shadow: inset 0 0 0 2px #cc495d;
+  color: #cc495d;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+.signup-draw-border::before, .signup-draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+.signup-draw-border::before {
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+.signup-draw-border::after {
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+.signup-draw-border:hover {
+  color: #4bb760;
+}
+.signup-draw-border:hover::before, .signup-draw-border:hover::after {
+  border-color: #4bb760;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+.signup-draw-border:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+.signup-draw-border:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.signup-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem 'Roboto Slab', sans-serif;
+  padding: 0.25em 0.8em;
+  letter-spacing: 0.020rem;
+}
+.signup-btn:focus {
+  outline: 1px dotted #55d7dc;
+}
+
+
+
+/* responsive designing */
+
+@media only screen and (max-width: 680px) {
+	body{
+		text-align: center;
+	}
+	.navbar-container{
+		height: 100px;
+	}
+
+	.login-form {
+  		width: auto;
+  		position: relative;
+  		right: auto;
+  		top: 5%;
+	}
+
+	.navbar-container{
+		text-align: center;
+	}
+	.navbar-container span{
+		width: 100%;
+		margin: 0 auto;
+	}
+	
+
+}
