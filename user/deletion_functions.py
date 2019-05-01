@@ -9,6 +9,9 @@ def delete_account(request):
     user_instance = User.objects.get(username=username)
     credential_instance = Credential.objects.get(username=username)
     current_uid = user_instance.unique_id
+    remove_likes(current_uid)
+    remove_follows(current_uid)
+    delete_posts(current_uid)
     deleted_uid = Deleted_UID(unique_id=current_uid)
     deleted_uid.save()
     credential_instance.delete()
@@ -72,3 +75,11 @@ def remove_follows(uid):
         user.save()
     return
 
+def delete_posts(uid):
+    posts_by_uid = Post.objects.filter(post_id__startswith=uid)
+    if posts_by_uid is None:
+        return
+    else:
+        for post in posts_by_uid:
+            post.delete()
+    return

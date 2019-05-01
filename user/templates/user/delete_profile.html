@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <link rel="shortcut icon" href="{%  static 'authentication/favicon.ico' %}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'authentication/style.css' %}">
+    <!-- Script to print messages, if any -->
+    <script type="text/javascript">
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+    </script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'home' %}">संवाद</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        </div>
+    </div>
+</nav>
+<div class="container" style="margin: 50px">
+    <!-- Verification Form div -->
+    <div id="login-form" style="width: 250px; position: relative; float: left; margin-left: 150px">
+        <br><br>
+        <h4>Remember, deleting your profile will remove all your posts from this website.</h4>
+        <h4>This action cannot be undone. To continue, enter your password.</h4>
+        <form style="width: 250px" method="POST" action="{% url 'settings' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+            </div>
+            {% if wrong_password %}
+            <div class="alert alert-danger alert-warning alert-dismissible fade show" role="alert">
+                Wrong password
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endif %}
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- verification form end -->
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="{% static 'authentication/jquery-3.3.1.slim.min.js' %}"></script>
+<script src="{% static 'authentication/bootstrap.min.js' %}" ></script>
+</body>
+</html>
